@@ -1,0 +1,93 @@
+BEGIN
+    DISPLAY Task Manager menu
+
+    Ask the user which CHOICE they want from the Task Manager.
+    This may include:
+        - Add a task
+        - Add a step to a task
+        - Mark a step as completed
+        - View all of the tasks (if any)
+        - Remove a task (if any)
+        - DISPLAY the TOTAL NUMBER of tasks
+        - Quit the program
+    IF user selects the last (7th) option, then terminate the program.
+END
+
+
+FUNCTION displayMenu():
+    PRINT --- Task Manager ---
+    PRINT the Task Manager options ranging from 1-7
+
+    LOOP forever
+
+        Ask the user what OPTION they want to choose
+
+        IF OPTION < 0 or OPTION > 7:
+            PROMPT Out of Range error message.
+        ELSE:
+            RETURN OPTION
+
+        IF an EXCEPTION ValueError is triggered:
+            PROMPT Invalid Value error message.
+
+
+FUNCTION getTask():
+
+    myList = empty list
+    
+    LOOP forever
+
+        IF OPTION == 1:
+
+            LOOP forever
+
+                Ask the user to enter their TASK
+
+                CHECK IF TASK has spaces and letters [Creates a new variable: check_task] 
+                (to make sure there are no numbers)
+
+                IF TASK is not an INTEGER:
+                    APPEND TASK to myList
+                    BREAK
+                ELSE IF TASK is an INTEGER:
+                    PRINT Your task cannot be an integer!
+
+        IF OPTION == 2:
+
+                
+
+________________________________________________________________________________________________________
+Major Changes:
+
+    1. Moved the OPTION input from displayMenu() to getTask() because after the 1st function ran,
+    you could not re-select another option, since the option you chose got returned to the 2nd function.
+    2. Removed displayMenu() function.
+
+
+
+--- Nested Dictionaries ---
+
+def data_collect():
+
+    myDict = {}
+
+    while True: # Outer Dictionary
+        if DONE, break loop
+
+        if enter data, add as dict key
+
+        while True:
+            if DONE, break loop
+            
+            if enter data, add as dict key value
+
+    
+--- Displaying Nested Dictionaries ---
+
+print HEADER
+
+for item in outer dictionary: myDict.items()
+    print the item(key)
+
+    for items in inner dictionary:
+        print each item & its value
